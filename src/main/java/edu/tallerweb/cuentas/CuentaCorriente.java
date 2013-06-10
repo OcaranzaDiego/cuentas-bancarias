@@ -13,8 +13,8 @@ public void depositar(final Double monto) {
 
 public void extraer(final Double monto) {
 	if( monto > this.getSaldo() ) {
-	if ( monto <= this.descubierto ){
-	this.descubierto -= monto
+	if ( monto <= this.descubiertoTotal ){
+	this.descubiertoTotal -= monto;
 	super.setSaldo(0.0);
 	}
 	else throw new CuentaBancariaException("No cubre descubierto");
