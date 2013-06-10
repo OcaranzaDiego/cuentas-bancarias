@@ -1,24 +1,22 @@
 package edu.tallerweb.cuentas;
 
-/**
- * Modela el concepto de Cuenta. Esta clase abstracta sirve
- * como base para una posible jerarquía (si fuese necesaria)
- *
- * Es probable que la tarea se facilite otorgando una imple-
- * mentación a los métodos proporcionados.
- */
 public abstract class AbstractCuenta {
+private double efectivo = 0.0;
+protected saldo;
+	
+public void depositar(final Double monto){
+	if ( monto >= 0 ) {
+		this.efectivo = this.efectivo + monto; 
+		}
+	else throw new CuentaBancariaException("El monto debe ser positivo"); 
+		}
 
-	/**
-	 * Agrega a la cuenta el monto determinado
-	 * @param monto a depositar
-	 */
-	public abstract void depositar(final Double monto);
+public void extraer(final Double monto){
+	if (monto < this.saldo && monto > 0) {
+		this.saldo = this.saldo - monto;}
+	else { throw new CuentaBancariaException("Error");
+		}
 
-	/**
-	 * Retira de la cuenta el monto determinado
-	 * @param monto a extraer
-	 */
-	public abstract void extraer(final Double monto);
-
-}
+public Double getSaldo(){
+	return this.saldo;}
+	}
