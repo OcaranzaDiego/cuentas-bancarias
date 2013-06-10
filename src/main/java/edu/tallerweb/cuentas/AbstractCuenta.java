@@ -19,9 +19,6 @@ public void extraer(final Double monto){
 public Double getSaldo(){
 	return this.efectivo;}
 	
-
 public void setSaldo(final Double monto){
 	this.efectivo = monto; }
-
 }
-
