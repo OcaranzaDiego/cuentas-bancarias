@@ -2,9 +2,9 @@ package edu.tallerweb.cuentas;
 
 public class CuentaCorriente extends AbstractCuenta {
 
-
+private double descubiertoTotal;
 public CuentaCorriente(final Double descubiertoTotal) {
-private double descubiertoTotal = descubiertoTotal;
+this.descubiertoTotal = descubiertoTotal;
 }
 	
 public void depositar(final Double monto) {
