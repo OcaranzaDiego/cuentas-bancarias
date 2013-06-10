@@ -11,6 +11,7 @@ public void extraer(final Double monto) {
 	}
 
 public Double getSaldo() {
-	throw new RuntimeException("No implementado aÃºn");
+	return super.getSaldo();
 	}
 }
+
