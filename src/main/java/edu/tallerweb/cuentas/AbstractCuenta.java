@@ -11,10 +11,13 @@ public void depositar(final Double monto){
 		}
 
 public void extraer(final Double monto){
-	if (monto < this.efectivo && monto > 0) {
-		this.efectivo = this.efectivo - monto;}
-	else { throw new CuentaBancariaException("Error"); }
-		}
+                 if ( monto > 0 ){
+                          if( this.efectivo >= monto) {
+                                   this.efectivo -= monto; }
+                          else throw new CuentaBancariaException("El satdo es Insuficiente");
+                 }
+                 else { throw new CuentaBancariaException("Error en el monto, el mismo no puede ser negativo"); }
+         }
 
 public Double getSaldo(){
 	return this.efectivo;}
