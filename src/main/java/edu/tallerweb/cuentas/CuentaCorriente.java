@@ -3,12 +3,20 @@ package edu.tallerweb.cuentas;
 public class CuentaCorriente extends AbstractCuenta {
 
 private double descubiertoTotal;
+private double descubiertoInicial;
 public CuentaCorriente(final Double descubiertoTotal) {
 this.descubiertoTotal = descubiertoTotal;
+this.descubiertoInicial = descubiertoTotal;
 }
 	
 public void depositar(final Double monto) {
-	super.depositar(monto);
+	if(this.descubiertoTotal < this.descubiertoInicial) {
+		if(this.descubiertoTotal - this.descubiertoInicial < monto){
+			this.descubiertoTotal = this.descubiertoInicial;
+			super.depositar(monto - (this.descubiertoTotal - this.descubiertoInicial));
+		} else {this.descubiertoTotal -= monto; }
+	} else { super.depositar(monto); }
+	
 }
 
 public void extraer(final Double monto) {
