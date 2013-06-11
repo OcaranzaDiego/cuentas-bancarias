@@ -21,7 +21,7 @@ public void depositar(final Double monto) {
 
 public void extraer(final Double monto) {
 	if( monto > this.getSaldo() ) {
-	if ( monto <= this.descubiertoTotal ){
+	if (monto - this.getSaldo() <= this.descubiertoTotal ){
 	this.descubiertoTotal -= monto;
 	super.setSaldo(0.0);
 	}
