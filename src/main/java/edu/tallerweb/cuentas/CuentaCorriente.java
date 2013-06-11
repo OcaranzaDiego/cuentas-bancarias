@@ -11,9 +11,9 @@ this.descubiertoInicial = descubiertoTotal;
 	
 public void depositar(final Double monto) {
 	if(this.descubiertoTotal < this.descubiertoInicial) {
-		if(this.descubiertoTotal - this.descubiertoInicial < monto){
+		if( this.descubiertoInicial - this.descubiertoTotal < monto){
 			this.descubiertoTotal = this.descubiertoInicial;
-			super.depositar(monto - (this.descubiertoTotal - this.descubiertoInicial));
+			super.depositar(monto - (this.descubiertoInicial - this.descubiertoTotal));
 		} else {this.descubiertoTotal -= monto; }
 	} else { super.depositar(monto); }
 	
